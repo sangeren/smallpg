@@ -1,0 +1,2 @@
+/* pages/input-purpose/base-infor/base-infor.wxss */
+@import "../../../common/lib/weui.wxss";

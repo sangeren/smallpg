@@ -1,0 +1,37 @@
+
+<!--pages/input-purpose/tennis-court/tennis-court.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="weui-cells__title">球场名称</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" value="{{courtName}}" auto-focus placeholder="将会获取焦点" bindinput="bindKeyCourtNameInput" placeholder="请输入球场名称" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">开发时间</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" value="{{openTime}}" bindinput="bindKeyOpenTimeInput" placeholder="请输入球场开放时间" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-body-info">
+      <text class="page-body-text-small">当前位置信息</text>
+      <block wx:if="{{hasLocation===false}}">
+        <text class="page-body-text">未选择位置</text>
+      </block>
+      <block wx:if="{{hasLocation===true}}">
+        <view class="page-body-text-location">
+          <text class="page-body-text">{{courtAddress}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="btn-area">
+      <button type="primary" bindtap="chooseLocation">选择位置</button>
+      <button type="primary" bindtap="saveCourt">保存</button>
+    </view>
+  </view>
+</view>

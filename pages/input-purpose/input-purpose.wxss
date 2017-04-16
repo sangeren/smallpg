@@ -1,0 +1,49 @@
+/**index.wxss**/
+@import "../../common/lib/weui.wxss";
+
+.container {
+  justify-content: unset;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.cell-content {
+  font-size: 24rpx;
+  margin-left: 120rpx;
+  color: #999;
+}
+
+.add-title {
+  display: block;
+}
+
+.add-information {
+  display: block;
+  text-align: right;
+  flex: 1;
+}
+
+.edit-image {
+  width: 32rpx;
+  height: 32rpx;
+  padding-left: 20rpx;
+}
+
+.text {
+  font-size: 28rpx;
+}

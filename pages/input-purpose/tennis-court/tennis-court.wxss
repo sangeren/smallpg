@@ -1,0 +1,5 @@
+/* pages/input-purpose/tennis-court/tennis-court.wxss */
+@import "../../../common/lib/weui.wxss";
+.container {
+  justify-content: unset;
+}

@@ -1,0 +1,26 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="kind-list">
+    <block wx:for-items="{{purposeList}}" wx:key="{{item.wxUserId}}">
+      <view class="page-section-title weui-cell">
+        <view class="purpose-left">
+          <image class="userinfo-avatar" src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="kind-list-text purpose-right">
+          <view class="purpose-infor">
+            <view>{{item.nickName}} {{item.playAge}}年
+            </view>
+            <view class="text-distance">{{item.disdance}}KM</view>
+          </view>
+          <view class="">{{item.exerciseExplain}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="purpose-tip">
+    <block wx:if="{{purposeList.length === 0}}">
+      <text class="page-body-text">附件还未有人发布打球意向！不妨你来第一个！</text>
+    </block>
+  </view>
+</view>

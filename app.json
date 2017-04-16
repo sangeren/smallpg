@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/input-purpose/input-purpose",
+    "pages/input-purpose/edit-purpose/edit-purpose",
+    "pages/input-purpose/base-infor/base-infor",
+    "pages/input-purpose/sport-equipment/sport-equipment",
+    "pages/input-purpose/tennis-court/tennis-court",
+
+    "pages/purpose-list/purpose-list",
+
+    "pages/history-player/history-player"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/input-purpose/input-purpose",
+      "text": "发布意向"
+    }, {
+      "pagePath": "pages/purpose-list/purpose-list",
+      "text": "意向列表"
+    }, {
+      "pagePath": "pages/history-player/history-player",
+      "text": "过往球友"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,98 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view bindtap="bindViewTap" class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title weui-cell">
+      <view class="add-title">打球意向</view>
+      <view class="add-information" bindtap="bindEditPurposeTap">
+        <image class="edit-image" src="../../images/edit.png"></image>
+        <text class=""></text>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">开始时间</view>
+        <view class="weui-cell__ft">{{userInformation.exercisePurpose.startTime}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">结束时间</view>
+        <view class="weui-cell__ft">{{userInformation.exercisePurpose.endTime}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">说明</view>
+        <view class="cell-content">{{userInformation.exercisePurpose.exerciseExplain}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title weui-cell">
+      <view class="add-title">基本信息</view>
+      <view class="add-information" bindtap="bindBaseInforTap">
+        <image class="edit-image" src="../../images/edit.png"></image>
+        <text class=""></text>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">性别</view>
+        <view class="weui-cell__ft">{{array[userInformation.userBaseInfo.gender]}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">球龄</view>
+        <view class="weui-cell__ft">{{arrayAge[userInformation.userBaseInfo.playAge]}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">居住地址</view>
+        <view class="cell-content">{{userInformation.userBaseInfo.nowAddress}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title weui-cell">
+      <view class="add-title">运动装备</view>
+      <view class="add-information" bindtap="bindSportEquipmentTap">
+        <image class="edit-image" src="../../images/edit.png"></image>
+        <text class=""></text>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">球拍</view>
+        <view class="weui-cell__ft">{{arrayRacket[userInformation.sportsEquipment.tennisRacketCount]}}把</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">网球</view>
+        <view class="weui-cell__ft">{{arrayTennis[userInformation.sportsEquipment.tennisCount]}}个</view>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title weui-cell">
+      <view class="add-title">球场1信息</view>
+      <view class="add-information" bindtap="bindTennisCourtTap">
+        <image class="edit-image" src="../../images/edit.png"></image>
+        <text class=""></text>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">名称</view>
+        <view class="weui-cell__ft">{{userInformation.tennisCourts[0].courtName}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">开发时间</view>
+        <view class="weui-cell__ft">{{userInformation.tennisCourts[0].openTime}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">位置</view>
+        <view class="cell-content">{{userInformation.tennisCourts[0].courtAddress}}</view>
+      </view>
+    </view>
+  </view>
+</view>

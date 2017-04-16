@@ -1,0 +1,4 @@
+/* pages/input-purpose/sport-equipment/sport-equipment.wxss */
+@import "../../../common/lib/weui.wxss";
+.buttonSave{
+}
