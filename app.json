@@ -7,6 +7,7 @@
     "pages/input-purpose/tennis-court/tennis-court",
 
     "pages/purpose-list/purpose-list",
+    "pages/purpose-list/purpose-detail/purpose-detail",
 
     "pages/history-player/history-player"
   ],

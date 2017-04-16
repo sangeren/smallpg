@@ -55,7 +55,6 @@ Page({
           userInfo: app.globalData.userInfo
         })
       }
-
       wx.request({
         url: app.host + 'UserInformation/' + userid,
         data: {},
@@ -76,7 +75,5 @@ Page({
         }
       });
     })
-
-
   }
 })

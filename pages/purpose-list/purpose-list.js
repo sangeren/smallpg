@@ -7,9 +7,12 @@ Page({
     purposeList: []
   },
   //事件处理函数
-  bindViewTap: function () {
+  purposeDetail: function (e) {
+    // console.log('-------purpose-purposeList-purposedetaul-------22')
+    // console.log(e)
+    var id = e.currentTarget.id;
     wx.navigateTo({
-      url: '../logs/logs'
+      url: './purpose-detail/purpose-detail?id=' + id
     })
   },
   onLoad: function () {
@@ -25,17 +28,6 @@ Page({
   onShow: function () {
     var that = this;
     var appInstance = getApp();
-    // wx.getLocation({
-    //   type: 'wgs84',
-    //   success: function (res) {
-    //     var appInstance = getApp();
-    //     if (appInstance.userid == '' || appInstance.userid == undefined)
-    //     { return; }
-    //     that.data.userLocation = res;
-    //     console.log(appInstance)
-
-    //   }
-    // });
 
     if (appInstance.userid == '' || appInstance.userid == undefined)
     { return; }

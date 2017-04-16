@@ -2,12 +2,12 @@
 <!--index.wxml-->
 <view class="container">
   <view class="kind-list">
-    <block wx:for-items="{{purposeList}}" wx:key="{{item.wxUserId}}">
+    <block wx:for="{{purposeList}}" wx:for-item="item">
       <view class="page-section-title weui-cell">
         <view class="purpose-left">
           <image class="userinfo-avatar" src="{{item.avatarUrl}}"></image>
         </view>
-        <view class="kind-list-text purpose-right">
+        <view id="{{item.wxUserId}}" class="kind-list-text purpose-right" bindtap="purposeDetail">
           <view class="purpose-infor">
             <view>{{item.nickName}} {{item.playAge}}年
             </view>
