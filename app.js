@@ -23,14 +23,20 @@ App({
             success: function (res) {
               that.globalData.userInfo = res.userInfo
               var gender = res.userInfo.gender - 1;
+              if (gender <= -1) { gender = 2 }
               var url = that.host + 'UserLogin/' + res1.code + '?nickName=' + res.userInfo.nickName + '&avatarUrl=' + res.userInfo.avatarUrl + '&gender=' + gender;
               wx.request({
                 url: url,
                 method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
                 success: function (res2) {
-                  that.userid = res2.data;
-                  that.globalData.userid = res2.data;
-                  typeof cb == "function" && cb(res2.data)
+                  //WxUserId
+                  console.log('userlogin--------------')
+                  console.log(res2)
+                  that.userid = res2.data.wxUserId;
+                  that.baseUserid = res2.data.userId;
+                  that.globalData.userid = res2.data.wxUserId;
+                  that.globalData.baseUserid = res2.data.userId;
+                  typeof cb == "function" && cb(res2.data.wxUserId)
                 },
                 fail: function (res) {
                   // fail
@@ -51,5 +57,6 @@ App({
     userid: null
   },
   userid: '',
+  baseUserid:null,
   host: 'https://wx.tiaomady.com/api/'
 })

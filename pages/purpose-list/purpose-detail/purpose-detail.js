@@ -9,6 +9,7 @@ Page({
     arrayTennis: ['0', '5', '10', '15', '20', '30', '50'],
     userInfo: null,
     userid: '',
+    purposeUserId: null,
     userInformation: {
     }
   },
@@ -16,7 +17,11 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     console.log('--------purpose-detail-onLoad-333333')
     console.log(options)
-    this.data.userid = options.id;
+    //baseinfo 用户id
+    this.data.purposeUserId = options.id;
+
+    var appInstance = getApp();
+    this.data.userid = appInstance.baseUserid;
   },
   onReady: function () {
     // 页面渲染完成
@@ -24,8 +29,12 @@ Page({
   onShow: function () {
     // 页面显示
     var that = this;
+    console.log('purpose---url')
+    console.log(app.host + 'UserInformation/' + that.data.purposeUserId + '?idType=1&initiatorId=' + that.data.userid)
     wx.request({
-      url: app.host + 'UserInformation/' + this.data.userid,
+      //D0EADBA0-63EB-475D-BAD4-354DCAF614A6
+      url: app.host + 'UserInformation/' + that.data.purposeUserId + '?idType=1&initiatorId=' + that.data.userid,
+      //url: app.host + 'UserInformation/2D4EC1C7-BBEB-43B7-9A0B-209F9035851C?idType=1',
       data: {},
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function (res) {
@@ -52,7 +61,38 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
-  bindSendAPleaes:function(){
-    
+  bindSendAPleaes: function () {
+    var that = this;
+    var AppointmentDto = { inviteeId: that.data.userInformation.userBaseInfoId, exercisePurposeId: that.data.userInformation.exercisePurposeId }
+    wx.request({
+      url: app.host + 'Appointment/' + that.data.userid,
+      data: AppointmentDto,
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: { 'Content-Type': 'application/json' }, // 设置请求的 header
+      success: function (res) {
+        // success
+        wx.showModal({
+          title: '操作成功',
+          content: '已成功向对方发送邀请通知！完善个人信息有助于对方接受你的邀请！',
+          showCancel: false,
+          success: function (res) {
+            if (res.confirm) {
+              wx.navigateBack({
+                delta: 1
+              })
+            }
+          }
+        })
+
+
+      },
+      fail: function (res) {
+        // fail
+      },
+      complete: function (res) {
+        // complete
+        console.log(res)
+      }
+    })
   }
 })

@@ -7,7 +7,7 @@
         <view class="purpose-left">
           <image class="userinfo-avatar" src="{{item.avatarUrl}}"></image>
         </view>
-        <view id="{{item.wxUserId}}" class="kind-list-text purpose-right" bindtap="purposeDetail">
+        <view id="{{item.id}}" class="kind-list-text purpose-right" bindtap="purposeDetail">
           <view class="purpose-infor">
             <view>{{item.nickName}} {{item.playAge}}年
             </view>
