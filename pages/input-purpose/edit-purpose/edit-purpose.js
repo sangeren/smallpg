@@ -94,7 +94,9 @@ Page({
     that.data.purpose.startTime = that.data.date + ' ' + that.data.startTime;
     that.data.purpose.endTime = that.data.date + ' ' + that.data.endTime;
     that.data.purpose.userLocation = that.data.location;
-    console.log('---------')
+
+    that.data.purpose.formId = e.detail.formId;
+    console.log('---formid------')
     console.log(that.data);
 
 

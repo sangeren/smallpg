@@ -61,9 +61,17 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
-  bindSendAPleaes: function () {
+  bindSendAPleaes: function (e) {
+    console.log('a click')
+    console.log(e)
+    //e.detail.formId
     var that = this;
-    var AppointmentDto = { inviteeId: that.data.userInformation.userBaseInfoId, exercisePurposeId: that.data.userInformation.exercisePurposeId }
+
+    var AppointmentDto = { inviteeId: that.data.userInformation.userBaseInfoId, exercisePurposeId: that.data.userInformation.exercisePurposes[0].id, formId: e.detail.formId}
+
+    console.log(app.host + 'Appointment1/' + that.data.userid)
+    console.log('---22333')
+    console.log(AppointmentDto)
     wx.request({
       url: app.host + 'Appointment/' + that.data.userid,
       data: AppointmentDto,

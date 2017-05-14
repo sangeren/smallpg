@@ -63,7 +63,7 @@
     <view class="page-section">
       <view class="page-section-title">输入你对此次运动的要求或说明！</view>
       <view class="textarea-wrp">
-        <form bindsubmit="bindFormSubmit">
+        <form bindsubmit="bindFormSubmit" report-submit="true">
           <textarea placeholder="{{purpose.exerciseExplain}}" value='{{purpose.exerciseExplain}}' name="textarea" />
           <button type="primary" form-type="submit"> 提交 </button>
         </form>

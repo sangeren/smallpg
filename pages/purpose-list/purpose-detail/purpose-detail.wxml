@@ -1,4 +1,3 @@
-
 <!--pages/purpose-list/purpose-detail/purpose-detail.wxml-->
 <view class="container">
   <view class="page-section">
@@ -101,8 +100,8 @@
   </view>
   <view class="page-section">
     <view class="textarea-wrp">
-      <form bindsubmit="bindSendAPleaes">
-        <button type="primary" form-type="submit"> 发起预约 </button>
+      <form bindsubmit="bindSendAPleaes" report-submit="true">
+        <button type="primary" disabled="{{userInformation.hasInitiatorAppointment}}" form-type="submit"> 发起预约 </button>
       </form>
     </view>
   </view>
