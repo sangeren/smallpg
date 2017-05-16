@@ -34,8 +34,11 @@ App({
                   console.log(res2)
                   that.userid = res2.data.wxUserId;
                   that.baseUserid = res2.data.userId;
+                  
                   that.globalData.userid = res2.data.wxUserId;
                   that.globalData.baseUserid = res2.data.userId;
+                  that.globalData.userInforId = res2.data.userInforId;
+                  
                   typeof cb == "function" && cb(res2.data.wxUserId)
                 },
                 fail: function (res) {

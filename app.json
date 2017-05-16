@@ -9,7 +9,10 @@
     "pages/purpose-list/purpose-list",
     "pages/purpose-list/purpose-detail/purpose-detail",
 
-    "pages/history-player/history-player"
+    "pages/history-player/history-player",
+    "pages/history-player/appointment-list/appointment-list",
+    "pages/history-player/purpose-ing/purpose-ing",
+    "pages/history-player/purpose-list/purpose-list"
   ],
   "window":{
     "backgroundTextStyle":"light",

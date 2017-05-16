@@ -1,10 +1,27 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block>
+        <view class="kind-list-item">
+          <view class="" style="flex:1">
+            <image class="kind-list-img" src="/images/api.png"></image>
+          </view>
+          <view class="" bindtap="receiveAppointment">收到的预约</view>
+        </view>
+        <view class="kind-list-item">
+          <view class="" style="flex:1">
+            <image class="kind-list-img" src="/images/api.png"></image>
+          </view>
+          <view class="" bindtap="exerciseing">进行的运动</view>
+        </view>
+        <view class="kind-list-item">
+          <view class="" style="flex:1">
+            <image class="kind-list-img" src="/images/api.png"></image>
+          </view>
+          <view class="" bindtap="exerciseed">过往的运动</view>
+        </view>
+      </block>
+    </view>
   </view>
 </view>
