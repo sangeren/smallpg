@@ -14,7 +14,7 @@ Page({
     var id = e.currentTarget.id;
     //var appInstance = getApp();
     wx.navigateTo({
-      url: './purpose-detail/purpose-detail?id=' + id
+      url: './purpose-detail/purpose-detail?id=' + id + '&type=1'
     })
   },
   onLoad: function () {

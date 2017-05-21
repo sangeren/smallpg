@@ -19,3 +19,6 @@
   width: 60rpx;
   height: 60rpx;
 }
+.tapSize{
+  margin: 10 rpx 10rpx 10rpx;
+}

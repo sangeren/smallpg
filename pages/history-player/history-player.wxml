@@ -3,23 +3,23 @@
   <view class="index-bd">
     <view class="kind-list">
       <block>
-        <view class="kind-list-item">
+        <view class="kind-list-item" bindtap="receiveAppointment">
           <view class="" style="flex:1">
             <image class="kind-list-img" src="/images/api.png"></image>
           </view>
-          <view class="" bindtap="receiveAppointment">收到的预约</view>
+          <view class="">收到的预约</view>
         </view>
-        <view class="kind-list-item">
+        <view class="kind-list-item" bindtap="exerciseing">
           <view class="" style="flex:1">
             <image class="kind-list-img" src="/images/api.png"></image>
           </view>
-          <view class="" bindtap="exerciseing">进行的运动</view>
+          <view class="">进行的运动</view>
         </view>
-        <view class="kind-list-item">
+        <view class="kind-list-item" bindtap="exerciseed">
           <view class="" style="flex:1">
             <image class="kind-list-img" src="/images/api.png"></image>
           </view>
-          <view class="" bindtap="exerciseed">过往的运动</view>
+          <view class="">过往的运动</view>
         </view>
       </block>
     </view>

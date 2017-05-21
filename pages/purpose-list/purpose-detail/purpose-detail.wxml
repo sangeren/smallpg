@@ -6,7 +6,8 @@
       <text class="userinfo-nickname">{{userInformation.userBaseInfo.nickName}}</text>
     </view>
   </view>
-  <view class="page-section">
+  <!--<view wx:if="{{appointmentType == 2}}" class="page-section">-->
+  <view wx:if="{{appointmentType != 2}}" class="page-section">
     <view class="page-section-title weui-cell">
       <view class="add-title">打球意向</view>
 
@@ -99,9 +100,20 @@
     </view>
   </view>
   <view class="page-section">
-    <view class="textarea-wrp">
+    <view wx:if="{{appointmentType == 1}}" class="textarea-wrp">
       <form bindsubmit="bindSendAPleaes" report-submit="true">
         <button type="primary" disabled="{{userInformation.hasInitiatorAppointment}}" form-type="submit"> 发起预约 </button>
+      </form>
+    </view>
+
+    <view wx:elif="{{appointmentType == 2}}" class="textarea-wrp">
+      <form bindsubmit="bindReceiveAppoint" report-submit="true">
+        <button type="primary" form-type="submit"> 接受预约 </button>
+      </form>
+    </view>
+    <view wx:if="{{appointmentType == 2}}" class="textarea-wrp">
+      <form bindsubmit="bindRefuseAppoint" report-submit="true">
+        <button type="primary" form-type="submit"> 拒绝 </button>
       </form>
     </view>
   </view>

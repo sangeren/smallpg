@@ -11,17 +11,24 @@ Page({
     userid: '',
     purposeUserId: null,
     userInformation: {
-    }
+    },
+    appointmentType: 0,
+    appointmentId: undefined
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     console.log('--------purpose-detail-onLoad-333333')
     console.log(options)
+    var that = this;
     //baseinfo 用户id
-    this.data.purposeUserId = options.id;
+    that.data.purposeUserId = options.id;
+    that.data.appointmentId = options.appointmentId;
+    that.setData({
+      appointmentType: options.type
+    })
 
     var appInstance = getApp();
-    this.data.userid = appInstance.baseUserid;
+    that.data.userid = appInstance.baseUserid;
   },
   onReady: function () {
     // 页面渲染完成
@@ -67,9 +74,9 @@ Page({
     //e.detail.formId
     var that = this;
 
-    var AppointmentDto = { inviteeId: that.data.userInformation.userBaseInfoId, exercisePurposeId: that.data.userInformation.exercisePurposes[0].id, formId: e.detail.formId}
+    var AppointmentDto = { inviteeId: that.data.userInformation.userBaseInfoId, exercisePurposeId: that.data.userInformation.exercisePurposes[0].id, formId: e.detail.formId }
 
-    console.log(app.host + 'Appointment1/' + that.data.userid)
+    console.log(app.host + 'Appointment/' + that.data.userid)
     console.log('---22333')
     console.log(AppointmentDto)
     wx.request({
@@ -102,5 +109,73 @@ Page({
         console.log(res)
       }
     })
-  }
+  },
+  bindReceiveAppoint: function (e) {
+    var that = this;
+    var AppointmentDto = {
+      inviteeId: that.data.userInformation.userBaseInfoId,
+      exercisePurposeId: that.data.userInformation.exercisePurposes[0].id,
+      formId: e.detail.formId,
+      ActionType: 0,
+      appointmentId: that.data.appointmentId
+    }
+    var content = '恭喜您完成了预约流程！可以通过[进行的预约]来明确线下的运动！';
+
+    console.log('a click')
+    console.log(e)
+    console.log(app.host + 'Appointment1/' + that.data.userid)
+    console.log(AppointmentDto)
+
+    OperateAppoint(that, AppointmentDto, content);
+  },
+  bindRefuseAppoint: function (e) {
+    var that = this;
+    var AppointmentDto = {
+      inviteeId: that.data.userInformation.userBaseInfoId,
+      exercisePurposeId: that.data.userInformation.exercisePurposes[0].id,
+      formId: e.detail.formId,
+      ActionType: 1,
+      appointmentId: that.data.appointmentId
+    }
+    var content = '就是任性！';
+
+    console.log('a click')
+    console.log(e)
+    console.log(app.host + 'Appointment/' + that.data.userid)
+    console.log(AppointmentDto)
+
+    OperateAppoint(that, AppointmentDto, content);
+  },
 })
+function OperateAppoint(that, AppointmentDto, content) {
+  wx.request({
+    url: app.host + 'Appointment/' + that.data.userid,
+    data: AppointmentDto,
+    method: 'PUT', // OPTIONS, GET, HEAD, POST, , DELETE, TRACE, CONNECT
+    header: { 'Content-Type': 'application/json' }, // 设置请求的 header
+    success: function (res) {
+      // success
+      wx.showModal({
+        title: '操作成功',
+        content: content,
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateBack({
+              delta: 2
+            })
+          }
+        }
+      })
+
+
+    },
+    fail: function (res) {
+      // fail
+    },
+    complete: function (res) {
+      // complete
+      console.log(res)
+    }
+  })
+}
