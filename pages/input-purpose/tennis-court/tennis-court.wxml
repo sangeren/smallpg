@@ -21,7 +21,7 @@
     <view class="page-body-info">
       <text class="page-body-text-small">当前位置信息</text>
       <block wx:if="{{hasLocation===false}}">
-        <text class="page-body-text">未选择位置</text>
+        <text class="page-body-text">请单击选择位置按钮</text>
       </block>
       <block wx:if="{{hasLocation===true}}">
         <view class="page-body-text-location">

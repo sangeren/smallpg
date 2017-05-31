@@ -56,7 +56,7 @@ Page({
         })
       }
       wx.request({
-        url: app.host + 'UserInformation/' + userid,
+        url: app.host + 'UserInformation/' + userid + '?t=' + new Date().getTime(),
         data: {},
         method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
         success: function (res) {

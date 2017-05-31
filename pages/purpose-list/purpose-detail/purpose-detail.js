@@ -73,8 +73,9 @@ Page({
     console.log(e)
     //e.detail.formId
     var that = this;
+    console.log(that)
 
-    var AppointmentDto = { inviteeId: that.data.userInformation.userBaseInfoId, exercisePurposeId: that.data.userInformation.exercisePurposes[0].id, formId: e.detail.formId }
+    var AppointmentDto = { inviteeId: that.data.userInformation.userBaseInfoId, exercisePurposeId: that.data.userInformation.exercisePurpose.id, formId: e.detail.formId }
 
     console.log(app.host + 'Appointment/' + that.data.userid)
     console.log('---22333')
@@ -98,8 +99,6 @@ Page({
             }
           }
         })
-
-
       },
       fail: function (res) {
         // fail
@@ -112,19 +111,23 @@ Page({
   },
   bindReceiveAppoint: function (e) {
     var that = this;
+
+    console.log('a click')
+    console.log(e)
+    console.log(app.host + 'Appointment1/' + that.data.userid)
+    console.log(AppointmentDto)
+    console.log(that)
+
     var AppointmentDto = {
       inviteeId: that.data.userInformation.userBaseInfoId,
-      exercisePurposeId: that.data.userInformation.exercisePurposes[0].id,
+      //exercisePurposeId: that.data.userInformation.exercisePurpose.id,
       formId: e.detail.formId,
       ActionType: 0,
       appointmentId: that.data.appointmentId
     }
     var content = '恭喜您完成了预约流程！可以通过[进行的预约]来明确线下的运动！';
 
-    console.log('a click')
-    console.log(e)
-    console.log(app.host + 'Appointment1/' + that.data.userid)
-    console.log(AppointmentDto)
+
 
     OperateAppoint(that, AppointmentDto, content);
   },
@@ -132,7 +135,7 @@ Page({
     var that = this;
     var AppointmentDto = {
       inviteeId: that.data.userInformation.userBaseInfoId,
-      exercisePurposeId: that.data.userInformation.exercisePurposes[0].id,
+      //exercisePurposeId: that.data.userInformation.exercisePurpose.id,
       formId: e.detail.formId,
       ActionType: 1,
       appointmentId: that.data.appointmentId

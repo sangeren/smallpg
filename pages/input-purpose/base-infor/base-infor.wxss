@@ -1,2 +1,7 @@
 /* pages/input-purpose/base-infor/base-infor.wxss */
 @import "../../../common/lib/weui.wxss";
+
+.textarea-wrp {
+  padding-left: 15px;
+  padding-right: 15px;
+}

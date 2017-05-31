@@ -5,3 +5,8 @@
   padding: 19rpx 26rpx;
   background-color: #fff;
 }
+
+.textarea-wrp {
+  padding-left: 15px;
+  padding-right: 15px;
+}

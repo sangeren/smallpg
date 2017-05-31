@@ -1,4 +1,10 @@
 /* pages/input-purpose/sport-equipment/sport-equipment.wxss */
 @import "../../../common/lib/weui.wxss";
-.buttonSave{
+
+.buttonSave {
+}
+
+.button-sp-area {
+  padding-left: 15px;
+  padding-right: 15px;
 }

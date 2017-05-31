@@ -38,6 +38,7 @@ Page({
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function (res) {
         // success
+        console.log(res)
         if (res.data == null)
           return;
         that.setData({ purpose: res.data })

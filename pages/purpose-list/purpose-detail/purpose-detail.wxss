@@ -8,3 +8,7 @@
 .page-section{
     margin-bottom: 30rpx;
 }
+.textarea-wrp{
+  padding-left: 15px;
+  padding-right: 15px;
+}
