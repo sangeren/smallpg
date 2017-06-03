@@ -26,8 +26,9 @@ Page({
       showMyModal('tips', '暂木有进行的预约！')
     }
     else {
+      //?id=' + id + '&type=2 purposeType=1 进行中的预约
       wx.navigateTo({
-        url: './purpose-ing/purpose-ing'
+        url: './purpose-ing/purpose-ing?purposeType=1'
       })
     }
   },
@@ -36,8 +37,9 @@ Page({
     if (this.data.userCentre == undefined || this.data.userCentre.isReceiveAppointment == undefined || this.data.userCentre.isComplishExercise == false) {
       showMyModal('tips', '列表空空如也，不妨去完成一次运动！')
     } else {
+      //?purposeType = 2 已完成的预约
       wx.navigateTo({
-        url: './purpose-list/purpose-list'
+        url: './purpose-list/purpose-list?purposeType=2'
       })
     }
 
