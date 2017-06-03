@@ -11,7 +11,7 @@
 
     "pages/history-player/history-player",
     "pages/history-player/appointment-list/appointment-list",
-    "pages/history-player/purpose-ing/purpose-ing",
+    "pages/history-player/purpose-list/purpose-ing/purpose-ing",
     "pages/history-player/purpose-list/purpose-list"
   ],
   "window":{

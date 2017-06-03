@@ -26,9 +26,9 @@ Page({
       showMyModal('tips', '暂木有进行的预约！')
     }
     else {
-      //?id=' + id + '&type=2 purposeType=1 进行中的预约
+      //?id=' + id + '&type=2 purposeType=1 进行中的预约 purpose-list/purpose-list
       wx.navigateTo({
-        url: './purpose-ing/purpose-ing?purposeType=1'
+        url: './purpose-list/purpose-list?purposeType=1'
       })
     }
   },
