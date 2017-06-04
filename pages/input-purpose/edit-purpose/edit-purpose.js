@@ -2,13 +2,13 @@ Page({
   data: {
     //wxUserid: '',
     date: '2016-09-01',
-    startTime: '12:01',
-    endTime: '12:01',
+    startTime: '9:01',
+    endTime: '18:01',
     location: {},
     purpose: {
       id: '',
-      startTime: '12:01',
-      endTime: '12:01',
+      startTime: '9:01',
+      endTime: '18:01',
       isCanChange: false,
       exerciseExplain: "很高兴打网球！",
       userLocation: {}

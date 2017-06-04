@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class="page-section">
-    <view class="weui-cells__title">开发时间</view>
+    <view class="weui-cells__title">开放时间</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <input class="weui-input" value="{{openTime}}" bindinput="bindKeyOpenTimeInput" placeholder="请输入球场开放时间" />
