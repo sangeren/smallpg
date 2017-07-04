@@ -12,7 +12,7 @@
       <view class="add-title">打球意向</view>
       <view class="add-information" bindtap="bindEditPurposeTap">
         <image class="edit-image" src="../../images/edit.png"></image>
-        <text class=""></text>
+        <text class="text-input"></text>
       </view>
     </view>
     <view class="weui-cells weui-cells_after-title">

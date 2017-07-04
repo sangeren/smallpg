@@ -19,6 +19,19 @@
   width: 60rpx;
   height: 60rpx;
 }
-.tapSize{
+
+.tapSize {
   margin: 10 rpx 10rpx 10rpx;
+}
+
+.about-us {
+  margin-bottom: 50rpx;
+  display: flex;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.view-navigator {
+  font-size: 34rpx;
+  padding-left: 15rpx;
 }

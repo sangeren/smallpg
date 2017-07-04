@@ -1,40 +1,49 @@
 {
-  "pages":[
+  "pages": [
     "pages/input-purpose/input-purpose",
     "pages/input-purpose/edit-purpose/edit-purpose",
     "pages/input-purpose/base-infor/base-infor",
     "pages/input-purpose/sport-equipment/sport-equipment",
     "pages/input-purpose/tennis-court/tennis-court",
-
     "pages/purpose-list/purpose-list",
     "pages/purpose-list/purpose-detail/purpose-detail",
-
     "pages/history-player/history-player",
     "pages/history-player/appointment-list/appointment-list",
     "pages/history-player/purpose-list/purpose-ing/purpose-ing",
-    "pages/history-player/purpose-list/purpose-list"
+    "pages/history-player/purpose-list/purpose-list",
+    "pages/history-player/helper/helper"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#3cc51f",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "pages/input-purpose/input-purpose",
-      "text": "发布意向"
-    }, {
-      "pagePath": "pages/purpose-list/purpose-list",
-      "text": "意向列表"
-    }, {
-      "pagePath": "pages/history-player/history-player",
-      "text": "过往球友"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/input-purpose/input-purpose",
+        "iconPath": "images/input-down.png",
+        "selectedIconPath": "images/input-up1.png",
+        "text": "发布意向"
+      },
+      {
+        "pagePath": "pages/purpose-list/purpose-list",
+        "iconPath": "images/list-down.png",
+        "selectedIconPath": "images/list-up.png",
+        "text": "意向列表"
+      },
+      {
+        "pagePath": "pages/history-player/history-player",
+        "iconPath": "images/user-center-down3.png",
+        "selectedIconPath": "images/user-center-up3.png",
+        "text": "个人中心"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000,

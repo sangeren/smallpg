@@ -20,7 +20,7 @@
   </view>
   <view class="purpose-tip">
     <block wx:if="{{purposeList.length === 0}}">
-      <text class="page-body-text">附件还未有人发布打球意向！不妨你来第一个！</text>
+      <text class="page-body-text">附近还未有人发布打球意向！不妨你来第一个！</text>
     </block>
   </view>
 </view>

@@ -50,6 +50,10 @@ Page({
     // UserCentre
     var appInstance = getApp();
 
+    if (appInstance.userInforId == undefined) {
+      app.getUserid(undefined)
+    }
+
     wx.request({
       url: appInstance.host + 'UserCentre/' + appInstance.userInforId,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
@@ -69,6 +73,22 @@ Page({
         console.log(res)
       }
     });
+  },
+  onShareAppMessage: function (res) {
+    if (res != undefined && res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '寻找同你一起打球的伙伴！',
+      path: '/pages/input-purpose/input-purpose?id=' + app.userid,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })
 function showMyModal(title, message) {

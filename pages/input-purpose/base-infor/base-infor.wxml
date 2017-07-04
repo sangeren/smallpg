@@ -32,7 +32,7 @@
     <view class="page-section-title">居住地址（不用太详细哦）</view>
     <view class="textarea-wrp">
       <form bindsubmit="bindFormSubmit">
-        <textarea placeholder="{{baseInfor.nowAddress}}" value='{{baseInfor.nowAddress}}' name="textarea" />
+        <textarea class="textarea-color" placeholder="{{baseInfor.nowAddress}}" value='{{baseInfor.nowAddress}}' name="textarea" />
         <button type="primary" form-type="submit"> 提交 </button>
       </form>
     </view>

@@ -20,7 +20,7 @@ form {
   width: 100%;
 }
 
-/* lib */
+/* lib */userinfo-nickname
 
 .strong {
   font-weight: bold;
