@@ -1,14 +1,23 @@
 /* pages/purpose-list/purpose-detail/purpose-detail.wxss */
 @import "../../../common/lib/weui.wxss";
+
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.page-section{
-    margin-bottom: 30rpx;
+
+.page-section {
+  margin-bottom: 30rpx;
 }
-.textarea-wrp{
+
+.textarea-wrp {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.cell-content {
+  font-size: 24rpx;
+  margin-left: 120rpx;
+  color: #999;
 }

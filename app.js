@@ -64,5 +64,6 @@ App({
   },
   userid: '',
   baseUserid: null,
-  host: 'https://wx.playtennis.cn/api/'
+  host: 'http://wx.tiaomady.com/api/'
+  // host: 'https://wx.playtennis.cn/api/'
 })
