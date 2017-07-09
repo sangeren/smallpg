@@ -1,4 +1,4 @@
-var serviceHost = 'http://wx.tiaomady.com/api/';
+var serviceHost = 'https://wx.tiaomady.com/api/';
 // var serviceHost ='https://wx.playtennis.cn/api/'
 function formatTimeByDate(date) {
   var year = date.getFullYear()

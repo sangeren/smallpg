@@ -1,3 +1,4 @@
+var util = require('../../utils/util.js')
 //index.js
 //获取应用实例
 var app = getApp()
@@ -15,7 +16,9 @@ Page({
       // exercisePurpose: {},
       // sportsEquipment: {},
       // tennisCourts: {}
-    }
+    },
+    imageArrange: [],
+    imagePathArray: [],
   },
   //编辑打球意向
   bindEditPurposeTap: function () {
@@ -41,7 +44,7 @@ Page({
       url: './tennis-court/tennis-court?userid=' + this.data.userid
     })
   },
-  onLoad: function () {
+  onLoad: function (e) {
     //调用应用实例的方法获取全局数据-用户信息
   },
   onShow: function () {
@@ -74,6 +77,34 @@ Page({
           console.log(res)
         }
       });
+      console.log('util.httpRquest(UploadFile/')
+      console.log(app.userInforId)
+      util.httpRquest('UploadFile/' + app.userInforId, undefined, undefined, undefined,
+        function (that, data) {
+          var lineLength = data.length / 3;
+          var ia = [];
+          for (i = 0; i < lineLength; i++) {
+            ia[i] = i;
+          }
+          console.log('call back')
+          that.setData({
+            imageArrange: ia
+          });
+          that.setData({
+            imagePathArray: data
+          });
+        }, undefined, that);
+    })
+  },
+  lookImage: function (e) {
+    console.log('ee' + e);
+    wx.navigateTo({
+      url: './iamge-edit/iamge-details/iamge-details?id=' + e.target.id,
+    })
+  },
+  bindEditImageTap: function (e) {
+    wx.navigateTo({
+      url: './iamge-edit/iamge-edit?id=' + app.userInforId,
     })
   }
 })

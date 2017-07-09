@@ -5,6 +5,9 @@
     "pages/input-purpose/base-infor/base-infor",
     "pages/input-purpose/sport-equipment/sport-equipment",
     "pages/input-purpose/tennis-court/tennis-court",
+    "pages/input-purpose/iamge-edit/iamge-edit",
+    "pages/input-purpose/iamge-edit/iamge-details/iamge-details",
+
     "pages/purpose-list/purpose-list",
     "pages/purpose-list/purpose-detail/purpose-detail",
     "pages/history-player/history-player",
