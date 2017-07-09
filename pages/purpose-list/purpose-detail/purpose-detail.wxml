@@ -99,6 +99,28 @@
       </view>
     </view>
   </view>
+  <!--个性展示-->
+  <view class="page-section">
+    <view class="page-section-title weui-cell">
+      <view class="add-title">个性展示</view>
+      <view class="add-information" bindtap="bindEditImageTap">
+        <!--<image class="edit-image" src="../../../images/edit.png"></image>
+        <text class="">编辑图片</text>-->
+      </view>
+    </view>
+    <view class="image-area">
+      <view class="first-line" wx:for="{{imageArrange}}" wx:for-item="i">
+        <view wx:for="{{imagePathArray}}" wx:for-item="image">
+          <view class="" wx:if="{{index < (i+1)*3 && index>=i*3}}">
+            <image id="{{image.fullPath}}" bindtap="lookImage" class="one-image" mode="" src='{{image.fullPath}}'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="image-tip" wx:if="{{imagePathArray.length==0}}">
+      <text>当前还未添加个性图片！</text>
+    </view>
+  </view>
   <view class="page-section">
     <view wx:if="{{appointmentType == 1}}" class="textarea-wrp">
       <form bindsubmit="bindSendAPleaes" report-submit="true">

@@ -1,3 +1,4 @@
+var util = require('../../../utils/util.js')
 // pages/purpose-list/purpose-detail/purpose-detail.js
 var app = getApp()
 Page({
@@ -13,7 +14,9 @@ Page({
     userInformation: {
     },
     appointmentType: 0,
-    appointmentId: undefined
+    appointmentId: undefined,
+    imageArrange: [],
+    imagePathArray: [],
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -61,6 +64,21 @@ Page({
         console.log(res)
       }
     });
+    util.httpRquest('UploadFile/' + app.userInforId, undefined, undefined, undefined,
+      function (that, data) {
+        var lineLength = data.length / 3;
+        var ia = [];
+        for (i = 0; i < lineLength; i++) {
+          ia[i] = i;
+        }
+        console.log('call back')
+        that.setData({
+          imageArrange: ia
+        });
+        that.setData({
+          imagePathArray: data
+        });
+      }, undefined, that);
   },
   onHide: function () {
     // 页面隐藏
@@ -149,6 +167,12 @@ Page({
 
     OperateAppoint(that, AppointmentDto, content);
   },
+  lookImage: function (e) {
+    console.log('ee' + e);
+    wx.navigateTo({
+      url: '/pages/input-purpose/iamge-edit/iamge-details/iamge-details?id=' + e.target.id,
+    })
+  }
 })
 function OperateAppoint(that, AppointmentDto, content) {
   wx.request({

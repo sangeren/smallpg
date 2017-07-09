@@ -1,5 +1,5 @@
-var serviceHost = 'https://wx.tiaomady.com/api/';
-// var serviceHost ='https://wx.playtennis.cn/api/'
+// var serviceHost = 'http://wx.tiaomady.com/api/';
+var serviceHost ='https://wx.playtennis.cn/api/'
 function formatTimeByDate(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -119,6 +119,9 @@ function httpRquest(url, data, method, header, success, fail, that, complete) {
 //上传文件
 function upload_file(url, filePath, fileName, formData, success, fail, that) {
   console.log('a=' + filePath);
+  if (fail == undefined) {
+    fail = requestFail;
+  }
 
   wx.uploadFile({
     url: serviceHost + url,
@@ -138,7 +141,7 @@ function upload_file(url, filePath, fileName, formData, success, fail, that) {
         }
       } else {
         console.log(2)
-        typeof fail == "function" && fail(res.errMsg);
+        typeof fail == "function" && fail(res.data);
       }
     },
     fail: function (res) {
